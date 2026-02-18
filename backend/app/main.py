@@ -15,6 +15,8 @@ from .routes.dev import router as dev_router
 from .routes.cameras import router as cameras_router
 from .routes.events import router as events_router
 from .routes.timeline import router as timeline_router
+from fastapi.middleware.cors import CORSMiddleware
+
 
 
 def ensure_dirs():
@@ -29,13 +31,19 @@ def create_app() -> FastAPI:
 
     app = FastAPI(title="rada-ai v1 backend")
 
-    app.add_middleware(
-        CORSMiddleware,
-        allow_origins=["http://localhost:5173"],
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
-    )
+   origins = [
+  "http://localhost:5173",
+  "https://demo.rada-ai.ma",
+  "https://www.rada-ai.ma",
+]
+
+app.add_middleware(
+  CORSMiddleware,
+  allow_origins=origins,
+  allow_credentials=True,
+  allow_methods=["*"],
+  allow_headers=["*"],
+)
 
     app.mount("/media", StaticFiles(directory=settings.MEDIA_DIR), name="media")
 
