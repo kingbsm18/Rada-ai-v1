@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: rada_pg
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-rada}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-rada}
+      POSTGRES_DB: ${POSTGRES_DB:-rada_db}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - rada_pgdata:/var/lib/postgresql/data
+
+volumes:
+  rada_pgdata:

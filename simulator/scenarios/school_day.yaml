@@ -1,0 +1,6 @@
+name: school_day
+event_rate_sec_range: [2.0, 4.0]
+labels: ["person", "vehicle"]
+event_types: ["intrusion", "loitering"]
+severity_base_range: [25, 60]
+steps_range: [3, 7]

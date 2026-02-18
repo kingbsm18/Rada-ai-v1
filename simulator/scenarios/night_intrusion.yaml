@@ -1,0 +1,6 @@
+name: night_intrusion
+event_rate_sec_range: [3.0, 6.0]
+labels: ["person"]
+event_types: ["intrusion", "vandalism"]
+severity_base_range: [45, 75]
+steps_range: [4, 9]

@@ -1,0 +1,31 @@
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+
+# Node
+node_modules/
+dist/
+build/
+*.log
+
+# Docker
+*.pid
+
+# Media artifacts
+media/snapshots/*
+media/clips/*
+media/recordings/*
+!media/snapshots/.keep
+!media/clips/.keep
+!media/recordings/.keep
