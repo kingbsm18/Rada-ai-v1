@@ -1,19 +1,57 @@
-* {
-    box-sizing: border-box;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --rada: #0A1E3D;
+  --rada2: #102a57;
+  --stroke: rgba(255,255,255,0.08);
+  --stroke2: rgba(10,30,61,0.12);
 }
 
-html,
-body,
-#root {
-    height: 100%;
-    margin: 0;
+html, body {
+  height: 100%;
 }
 
 body {
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: radial-gradient(1200px 700px at 20% 0%, rgba(10,30,61,0.25), transparent 55%),
+              radial-gradient(900px 600px at 80% 20%, rgba(16,42,87,0.18), transparent 60%),
+              #070e1a;
+  color: white;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+.rada-surface {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--stroke);
+  backdrop-filter: blur(10px);
+}
+
+.rada-surface-2 {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--stroke);
+}
+
+.rada-chip {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+.rada-btn {
+  background: linear-gradient(180deg, #0A1E3D 0%, #0b2348 100%);
+  border: 1px solid rgba(255,255,255,0.14);
+}
+
+.rada-btn:hover {
+  filter: brightness(1.08);
+}
+
+@keyframes radaPulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 59, 59, 0.50); }
+  70% { box-shadow: 0 0 0 14px rgba(255, 59, 59, 0.00); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 59, 59, 0.00); }
+}
+
+.rada-incident {
+  animation: radaPulse 1.2s ease-out 1;
+  border-color: rgba(255,59,59,0.45) !important;
 }
